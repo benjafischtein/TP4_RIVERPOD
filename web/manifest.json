@@ -1,6 +1,6 @@
 {
-    "name": "tp_fin_cuatrimestre",
-    "short_name": "tp_fin_cuatrimestre",
+    "name": "TP4_RIVERPOD",
+    "short_name": "TP4_RIVERPOD",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
