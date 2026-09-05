@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tp_fin_cuatrimestre/entities/paises.dart';
+import 'package:TP4_RIVERPOD/entities/paises.dart';
 
 class Detalles extends StatelessWidget {
   final Pais paisSeleccionado;

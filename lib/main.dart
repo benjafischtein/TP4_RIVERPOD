@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tp_fin_cuatrimestre/core/routers.dart';
+import 'package:TP4_RIVERPOD/core/routers.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tp_fin_cuatrimestre/entities/paises.dart';
-import 'package:tp_fin_cuatrimestre/providers/listapaises.dart';
+import 'package:TP4_RIVERPOD/entities/paises.dart';
+import 'package:TP4_RIVERPOD/providers/listapaises.dart';
 
 class Lista extends ConsumerStatefulWidget {
   const Lista({super.key, required this.nombre});
