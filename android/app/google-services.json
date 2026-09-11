@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "410029319860",
+    "project_id": "paises-del-mundo-70d24",
+    "storage_bucket": "paises-del-mundo-70d24.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410029319860:android:cfdbfc9780f1dfd4ed19e1",
+        "android_client_info": {
+          "package_name": "com.example.tp_fin_cuatrimestre"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHIcJyvo4Bciv9X0LyksU96qqonRzxUh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
