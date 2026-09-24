@@ -15,9 +15,15 @@ class Lista extends ConsumerStatefulWidget {
 
 class _ListaState extends ConsumerState<Lista> {
   @override
-  Widget build(BuildContext context) {
-    final paises = ref.watch(paisesProvider);
+  void initState(){
+    super.initState();
+    ref.read(countryProvider.notifier).getAllMovies();
+  }
 
+
+  @override
+  Widget build(BuildContext context) {
+    List<Pais> paises = ref.watch(countryProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text(
