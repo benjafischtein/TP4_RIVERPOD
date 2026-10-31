@@ -24,7 +24,8 @@ class Pais {
       'descripcion': descripcion,
       'capital': capital,
       'poblacion': poblacion,
-      'bandera': bandera
+      'bandera': bandera,
+      'createdAt': FieldValue.serverTimestamp()
     };
   }
 
