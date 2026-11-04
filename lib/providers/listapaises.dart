@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/legacy.dart';
-import 'package:TP4_RIVERPOD/entities/paises.dart';
+import '../entities/paises.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 final countryProvider = StateNotifierProvider(
@@ -12,7 +12,7 @@ class CountriesNotifier extends StateNotifier<List<Pais>>{
   FirebaseFirestore db;
 
 
-  Future<void> getAllMovies() async {
+  Future<void> getAllCountries() async {
     try {
       final docs = db.collection('paises').withConverter(
           fromFirestore: Pais.fromFirestore,
@@ -26,5 +26,14 @@ class CountriesNotifier extends StateNotifier<List<Pais>>{
       print('Error al cargar paises: $error');
     }
   }
-  
+
+  Future<void> addCountry(Pais pais) async {
+    final doc = db.collection('paises').doc();
+    try {
+      await doc.set(pais.toFirestore());
+      state = [...state, pais];
+    } catch (e) {
+      print(e);
+    }
+  }
 }

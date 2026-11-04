@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:TP4_RIVERPOD/entities/paises.dart';
-import 'package:TP4_RIVERPOD/providers/listapaises.dart';
+import '../entities/paises.dart';
+import '../providers/listapaises.dart';
 
 // ignore: must_be_immutable
 class EditarElemento extends ConsumerWidget {
@@ -19,7 +19,7 @@ class EditarElemento extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      /*body: Padding(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 24.0),
         child: Center(
           child: Column(
@@ -111,12 +111,13 @@ class EditarElemento extends ConsumerWidget {
                         bandera: banderacontroller.text,
                       );
                 
-                      List<Pais> paises = ref.read(paisesProvider.notifier).state;
+                      // ignore: invalid_use_of_protected_member
+                      List<Pais> paises = ref.read(countryProvider.notifier).state;
                       int index = paises.indexWhere((pais) => pais.id == paisSeleccionado.id);
                 
                       if (index != -1) {
                         paises[index] = paisActualizado;
-                        ref.read(paisesProvider.notifier).state = List.from(paises);
+                        ref.read(countryProvider.notifier).state = List.from(paises);
                       }
                 
                       context.pop();
@@ -135,7 +136,7 @@ class EditarElemento extends ConsumerWidget {
             ],
           ),
         ),
-      )*/
+      )
     );
   }
 }

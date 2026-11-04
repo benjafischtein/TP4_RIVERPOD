@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:TP4_RIVERPOD/entities/paises.dart';
-import 'package:TP4_RIVERPOD/providers/listapaises.dart';
+import '../entities/paises.dart';
+import '../providers/listapaises.dart';
 
 // ignore: must_be_immutable
 class Extra extends ConsumerWidget {
@@ -18,7 +18,7 @@ class Extra extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      /*body: Padding(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 24.0),
         child: Center(
           child: Column(
@@ -100,14 +100,14 @@ class Extra extends ConsumerWidget {
                     } else {
                       ad = 'País agregado correctamente.';       
                       final nuevoPais = Pais(
-                        id: ref.read(paisesProvider).length,
+                        id: '', // El ID se generará automáticamente en Firestore
                         nombre: nombrecontroller.text,
                         descripcion: descripcioncontroller.text,
                         capital: capitalcontroller.text,
                         poblacion: int.tryParse(poblacioncontroller.text) ?? 0,
                         bandera: banderacontroller.text,
                       );
-                      ref.read(paisesProvider.notifier).state.add(nuevoPais);
+                      ref.read(countryProvider.notifier).addCountry(nuevoPais);
                     }
 
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -132,7 +132,7 @@ class Extra extends ConsumerWidget {
             ],
           )
         ),
-      )*/
+      )
     );
   }
 }

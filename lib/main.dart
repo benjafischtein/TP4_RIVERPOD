@@ -1,7 +1,7 @@
-import 'package:TP4_RIVERPOD/firebase_options.dart';
+import '../firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:TP4_RIVERPOD/core/routers.dart';
+import '../core/routers.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {

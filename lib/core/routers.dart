@@ -1,11 +1,11 @@
 import 'package:go_router/go_router.dart';
-import 'package:TP4_RIVERPOD/screens/login.dart';
-import 'package:TP4_RIVERPOD/screens/lista.dart';
-import 'package:TP4_RIVERPOD/screens/detalles.dart';
-import 'package:TP4_RIVERPOD/entities/paises.dart';
-import 'package:TP4_RIVERPOD/screens/agregarpais.dart';
-import 'package:TP4_RIVERPOD/screens/registro.dart';
-import 'package:TP4_RIVERPOD/screens/editarpais.dart';
+import '../screens/login.dart';
+import '../screens/lista.dart';
+import '../screens/detalles.dart';
+import '../entities/paises.dart';
+import '../screens/agregarpais.dart';
+import '../screens/registro.dart';
+import '../screens/editarpais.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/login',

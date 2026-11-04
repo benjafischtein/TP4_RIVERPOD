@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:TP4_RIVERPOD/entities/user.dart';
-import 'package:TP4_RIVERPOD/providers/listausuarios.dart';
+import '../entities/user.dart';
+import '../providers/listausuarios.dart';
 
 class Registro extends ConsumerStatefulWidget {
   const Registro({super.key});

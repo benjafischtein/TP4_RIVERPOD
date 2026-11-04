@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:TP4_RIVERPOD/entities/paises.dart';
-import 'package:TP4_RIVERPOD/providers/listapaises.dart';
+import '../entities/paises.dart';
+import '../providers/listapaises.dart';
 
 class Lista extends ConsumerStatefulWidget {
   const Lista({super.key, required this.nombre});
@@ -17,7 +17,7 @@ class _ListaState extends ConsumerState<Lista> {
   @override
   void initState(){
     super.initState();
-    ref.read(countryProvider.notifier).getAllMovies();
+    ref.read(countryProvider.notifier).getAllCountries();
   }
 
 

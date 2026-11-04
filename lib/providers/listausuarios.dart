@@ -1,5 +1,5 @@
-import 'package:flutter_riverpod/legacy.dart';
-import 'package:TP4_RIVERPOD/entities/user.dart';
+/*import 'package:flutter_riverpod/legacy.dart';
+import '../entities/user.dart';
 
 List<User> usuarios = [
   User(
@@ -38,4 +38,45 @@ List<User> usuarios = [
   ),
 ];
 
-StateProvider<List<User>> usersProvider = StateProvider((ref) => usuarios);
+StateProvider<List<User>> usersProvider = StateProvider((ref) => usuarios);*/
+
+import 'package:flutter_riverpod/legacy.dart';
+import '../entities/user.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+final usersProvider = StateNotifierProvider(
+  (ref) => UsersNotifier(FirebaseFirestore.instance)
+);
+
+class UsersNotifier extends StateNotifier<List<User>>{
+  UsersNotifier(this.db) : super([]);
+
+
+  FirebaseFirestore db;
+
+
+  Future<void> getAllUsers() async {
+    try {
+      final docs = db.collection('usuarios').withConverter(
+          fromFirestore: User.fromFirestore,
+          toFirestore: (User user, _) => user.toFirestore()
+        );
+      final users = await docs.get().timeout(const Duration(seconds: 10));
+      state = [...state, ...users.docs.map((d) => d.data())];
+    } on FirebaseException catch (error) {
+      print('Error de Firestore (${error.code}): ${error.message}');
+    } catch (error) {
+      print('Error al cargar usuarios: $error');
+    }
+  }
+
+  Future<void> addUser(User user) async {
+    final doc = db.collection('usuarios').doc();
+    try {
+      await doc.set(user.toFirestore());
+      state = [...state, user];
+    } catch (e) {
+      print(e);
+    }
+  }
+}
